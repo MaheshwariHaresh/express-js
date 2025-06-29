@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  },
+  "scripts": {
+    "cmd1": "node --watch app.js",
+    "start": "node db/populatedb.js && npm run cmd1"
+  }
+}

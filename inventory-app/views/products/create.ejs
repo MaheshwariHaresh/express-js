@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+<h1>Create a New Product</h1>
+<form action="/products/create" method="post">
+  <label for="name">Product Name:</label>
+  <input type="text" name="name" id="name" required />
+  <label for="description">Description:</label>
+  <textarea name="description" id="description"></textarea>
+  <label for="price">Price:</label>
+  <input type="number" name="price" id="price" step="0.01" required />
+  <label for="stock_quantity">Stock Quantity:</label>
+  <input type="number" name="stock_quantity" id="stock_quantity" required />
+  <label for="category_id">Category:</label>
+  <select name="category_id" id="category_id" required>
+    <% categories.forEach(category => { %>
+    <option value="<%= category.id %>"><%= category.name %></option>
+    <% }); %>
+  </select>
+  <button type="submit">Create</button>
+</form>
+<%- include('../partials/footer') %>
