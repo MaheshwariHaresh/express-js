@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <p>Search Query: <strong><%= searchQuery %></strong></p>
+
+    <% if (results.length > 0) { %>
+    <ul>
+      <% results.forEach((user) => { %>
+      <li>
+        <strong>ID:</strong> <%= user.id %> | <strong>Name:</strong> <%=
+        user.firstName %> <%= user.lastName %> | <strong>Email:</strong> <%=
+        user.email %>
+      </li>
+      <% }); %>
+    </ul>
+    <% } else { %>
+    <p>No users found for the email "<%= searchQuery %>".</p>
+    <% } %>
+
+    <a href="/">Back to home</a>
+  </body>
+</html>
